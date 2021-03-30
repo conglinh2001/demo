@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <span> nhap so:</span>
+        <input type="text" id="so1" /><br />
+        <span> nhap so:</span>
+        <input type="text" id="so2" /><br />
+        <select id="pheptoan">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <br />
+        <span> Ket qua:</span>
+        <input type="text" id="ketqua" />
+        <button onclick="truyenvao()">Tinh</button>
+        <script type="text/javascript">
+            function truyenvao() {
+                var so1 = document.getElementById("so1").value;
+                var so2 = document.getElementById("so2").value;
+                var pheptinh = document.getElementById("pheptoan").value;
+                var kq = 0;
+                if (pheptinh == "+") {
+                    kq = parseInt(so1) + parseInt(so2);
+                } else if (pheptinh == "-") {
+                    kq = parseInt(so1) - parseInt(so2);
+                } else if (pheptinh == "*") {
+                    kq = parseInt(so1) * parseInt(so2);
+                } else {
+                    if (so2 == 0) {
+                        alert("sai");
+                    } else {
+                        kq = parseInt(so1) / parseInt(so2);
+                    }
+                }
+                document.getElementById("ketqua").value = kq;
+            }
+        </script>
+    </body>
+</html>
